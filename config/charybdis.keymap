@@ -173,5 +173,15 @@
                         &trans   &trans  &trans       &trans  &trans
             >;
         };
+
+        SNIPE {
+            bindings = <
+&trans  &trans  &trans  &trans   &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans   &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans   &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans   &trans  &trans       &trans  &trans
+            >;
+        };
+
     };
 };
