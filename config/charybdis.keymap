@@ -411,27 +411,27 @@
 
         NAV {
             bindings = <
-&trans  &trans      &kp UP    &trans       &trans  &trans        &kp N7   &kp N8                &kp N9          &kp N0  &kp HOME  &kp F1
-&trans  &kp LEFT    &kp DOWN  &kp RIGHT    &trans  &trans        &kp N4   &u_mt RIGHT_SHIFT N5  &u_mt RCTRL N6  &trans  &trans    &kp F10
-&trans  &trans      &trans    &trans       &trans  &trans        &kp N1   &kp N2                &kp N3          &trans  &trans    &kp F20
+&kp TAB           &trans     &kp STAR    &kp DQT       &kp LPAR      &kp RPAR      AS(BSLH)   AS(N7)     AS(N8)     AS(N9)     AS(N0)       &kp DEL
+&kp LEFT_CONTROL  &trans     &kp AMPS    &kp UNDER     &kp LBKT      &kp RBKT      AS(SQT)    AS(N4)     AS(N5)     AS(N6)     AS(MINUS)    &kp SQT
+&kp LSHFT         &trans     &kp PIPE    &kp PLUS      &kp LBRC      &kp RBRC      AS(FSLH)   AS(N1)     AS(N2)     AS(N3)     AS(EQUAL)    &kp ESC
                             &trans        &tog 1        &trans        &trans     &mo 3
             >;
         };
 
         SYMNUM {
             bindings = <
-&trans  &kp EXCL      &kp AT       &kp HASH    &kp DLLR  &kp PRCNT    &kp CARET  &kp   AMPS               &kp KP_MULTIPLY    &kp LPAR              &kp RPAR              &kp DEL
-&trans  &bt BT_CLR    &bt BT_PRV   &bt BT_NXT  &trans    &trans       &kp UNDER  &u_mt RIGHT_SHIFT EQUAL  &u_mt RCTRL LBKT   &u_mt RIGHT_ALT RBKT  &u_mt RIGHT_GUI BSLH  &kp GRAVE
-&trans  &out OUT_TOG  &bootloader  &trans      &trans    &trans       &kp MINUS  &kp   PLUS               &kp LBRC           &kp RBRC              &kp PIPE              &kp TILDE
+&kp TAB           &kp F7  &kp F8   &kp F9        &ht_r 0 0      &none        &kp F10   &kp F11      &kp F12   &none      &none    &kp DELETE
+&kp LEFT_CONTROL  &kp F4  &kp F5   &kp F6        &ht_f 0 0      &ht_g 0 0    &kp LEFT  &kp DOWN     &kp UP    &kp RIGHT  &trans   &trans
+&kp LEFT_SHIFT    &kp F1  &kp F2   &kp F3        &ht_v 0 0      &none        &kp HOME  &kp PG_DN    &kp PG_UP &kp END    &none    &kp ESC
                                    &trans        &mo 3          &trans       &trans    &tog 2
             >;
         };
 
         FUN {
             bindings = <
-&trans  &trans   &kp F1  &kp F2   &kp F3   &kp F4     &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_SEL 2       &bt BT_SEL 3     &bt BT_SEL 4  &bt BT_CLR
-&trans  &kp DEL  &kp F5  &kp F6   &kp F7   &kp F8     &out OUT_TOG  &kp K_PLAY_PAUSE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_MUTE    &kp LALT
-&trans  &trans   &kp F9  &kp F10  &kp F11  &kp F12    &trans        &trans            &trans             &trans           &trans        &to 0
+&none        &trans        &trans        &mo 5         &none      &none         &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE    &none         &tdp0         &none
+&none        &trans        &trans        &mo 4         &mkp LCLK  &mkp RCLK     &none        &none        &trans        &trans        &trans        &none
+&bootloader  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 3  &none      &bt BT_CLR    &none        &none        &none         &none         &trans        &bootloader
                          &trans        &tog 3     &trans        &trans       &tog 3
             >;
         };
@@ -441,7 +441,7 @@
 &trans  &trans  &trans  &trans     &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &mo 6   &mo 5      &mkp LCLK  &mkp RCLK &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans     &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans     &trans  &trans       &trans  &trans
+                        &trans     &kp LSHFT  &trans       &trans  &trans
             >;
         };
 
