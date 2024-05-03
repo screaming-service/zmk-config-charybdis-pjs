@@ -13,81 +13,141 @@
     chosen { zmk,matrix_transform = &default_transform; };
 };
 
-/ {
-    combos {
-        compatible = "zmk,combos";
-
-        LeftClickRight {
-            bindings = <&mkp LCLK>;
-            key-positions = <19 20>;
+    macros {
+        vi_w: vi_w {
+            label = "VIM_SAVE";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_tap &kp ESC &kp COLON &kp W &kp ENTER>
+                ;
         };
-
-        RightClickRight {
-            bindings = <&mkp RCLK>;
-            key-positions = <20 21>;
+        vi_e: vi_e {
+            label = "VIM_RELOADE_BUFFER";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_tap &kp ESC &kp COLON &kp E &kp LS(N1) &kp ENTER>
+                ;
         };
-
-        MiddleClickRight {
-            bindings = <&mkp MCLK>;
-            key-positions = <21 22>;
+        tx_c: tx_c {
+            label = "TMUX_COPY_MODE";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_tap &kp LC(B) &kp LBKT>
+                ;
         };
-
-        ParaLeft {
-            bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <4 16>;
+        tx_p: tx_p {
+            label = "TMUX_PREV_PANE";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_tap &kp LC(B) &kp SEMI>
+                ;
         };
-
-        ParaRight {
-            bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <7 19>;
+        tx_y: tx_y {
+            label = "TMUX_PREV_PANE_MAX";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_tap &kp LC(B) &kp Y>
+                ;
         };
-
-        BrakLeft {
-            bindings = <&kp LEFT_BRACKET>;
-            key-positions = <3 15>;
+        tx_v: tx_v {
+            label = "TMUX_PREV_PASTE";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_tap &kp LC(B) &kp COLON &kp P &kp A &kp ENTER>
+                ;
         };
-
-        BrakRight {
-            bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <8 20>;
+        hy_p: hy_p {
+            label = "HYPER_P";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_tap &kp LG(LA(LS(LC(P))))>
+                ;
         };
-
-        BraceLeft {
-            bindings = <&kp LEFT_BRACE>;
-            key-positions = <2 14>;
+        gsc4: gsc4 {
+            label = "MAC_OS_SCREENSHOT_4";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_tap &kp LG(LS(LC(N4)))>
+                ;
         };
-
-        BraceRight {
-            bindings = <&kp RIGHT_BRACE>;
-            key-positions = <9 21>;
+        pri0: pri0 {
+            label = "PRIVATE_KEY_SEQ_0";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_tap 
+                    &kp LS(Z) &kp C &kp T &kp D &kp L &kp A &kp M &kp N &kp U 
+                    &kp X &kp D &kp E &kp X &kp D &kp Z &kp O &kp G &kp D &kp M 
+                    &kp Z>
+                ;
         };
-
-        Delete {
-            bindings = <&kp DELETE>;
-            key-positions = <8 9>;
+        pri1: pri1 {
+            label = "PRIVATE_KEY_SEQ_1";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_tap &kp BSPC>
+                , <&macro_wait_time 3500>
+                , <&pri0>
+                ;
         };
-
-        CapsWord {
-            bindings = <&caps_word>;
-            key-positions = <17 18>;
+        pri2: pri2 {
+            label = "PRIVATE_KEY_SEQ_2";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_tap 
+                    &kp C &kp T &kp D &kp L &kp A &kp M &kp N &kp U 
+                    &kp Z>
+                ;
         };
     };
 
     behaviors {
-        tdl4: tap_dance_toggle_scroll {
+        tdsc: tap_dance_toggle_scroll {
             label = "TD_TOGGLE_SCROLL";
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <175>;
-            bindings = <&mo 4>, <&tog 4>;
+            bindings = <&mo 5>, <&tog 5>;
         };
 
-        tdl5: tap_dance_toggle_sniping {
+        tdsn: tap_dance_toggle_sniping {
             label = "TD_TOGGLE_SNIPING";
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <175>;
-            bindings = <&mo 5>, <&tog 5>;
+            bindings = <&mo 6>, <&tog 6>;
         };
 
         as: auto_shift {
@@ -99,21 +159,240 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        u_mt: u_mt {
+
+        ht_r: hold_tap_at_r {
+            label = "HOLD_TAP_AT_R";
             compatible = "zmk,behavior-hold-tap";
-            label = "u_mt";
             #binding-cells = <2>;
-            tapping_term_ms = <U_TAPPING_TERM>;
+            tapping_term_ms = <155>;
+            quick_tap_ms = <120>;
             flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
+            bindings = <&tx_c>, <&vi_w>;
         };
-        u_lt: u_lt {
+
+        ht_f: hold_tap_at_f {
+            label = "HOLD_TAP_AT_F";
             compatible = "zmk,behavior-hold-tap";
-            label = "u_lt";
             #binding-cells = <2>;
-            tapping_term_ms = <U_TAPPING_TERM>;
+            tapping_term_ms = <155>;
+            quick_tap_ms = <120>;
             flavor = "tap-preferred";
-            bindings = <&mo>, <&kp>;
+            bindings = <&tx_y>, <&tx_p>;
+        };
+
+        ht_v: hold_tap_at_v {
+            label = "HOLD_TAP_AT_V";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping_term_ms = <155>;
+            quick_tap_ms = <120>;
+            flavor = "tap-preferred";
+            bindings = <&vi_e>, <&tx_v>;
+        };
+
+        ht_g: hold_tap_at_g {
+            label = "HOLD_TAP_AT_G";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping_term_ms = <155>;
+            quick_tap_ms = <120>;
+            flavor = "tap-preferred";
+            bindings = <&gsc4>, <&hy_p>;
+        };
+
+        ht_p: hold_tap_at_p {
+            label = "HOLD_TAP_AT_P";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping_term_ms = <155>;
+            quick_tap_ms = <120>;
+            flavor = "tap-preferred";
+            bindings = <&pri2>, <&pri0>;
+        };
+        tdp0: tap_dance_private_seq_02 {
+            label = "TD_PRIVATE_SEQ_02";
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <175>;
+            bindings = <&none>, <&ht_p 0 0>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+        // Tmux
+        combo_ctrl_b {
+            timeout-ms = <25>;
+            key-positions = <15 27>; // D, E
+            bindings = <&kp LC(B)>;
+        };
+
+        // Track ball and mouse clicks
+        combo_mo_scroll {
+            timeout-ms = <25>;
+            key-positions = <14 26>; // S, W
+            bindings = <&tdsc>; //<&mo 5>;
+        };
+        combo_mo_snipe {
+            timeout-ms = <25>;
+            key-positions = <21 33>; // O, L
+            bindings = <&tdsn>; //<&mo 6>;
+        };
+        combo_left_click {
+            timeout-ms = <25>;
+            key-positions = <27 28>; // D, F
+            bindings = <&mkp LCLK>;
+        };
+        combo_right_click {
+            timeout-ms = <25>;
+            key-positions = <28 29>; // F, G
+            bindings = <&mkp RCLK>;
+        };
+        combo_tog_3 {
+            timeout-ms = <25>;
+            key-positions = <26 38>; // S, X
+            bindings = <&tog 3>;
+        };
+
+
+        // Enter/ESC ...
+        combo_enter {
+            timeout-ms = <25>;
+            key-positions = <20 32>; // I, K
+            bindings = <&kp ENTER>;
+        };
+        combo_shift_enter {
+            timeout-ms = <25>;
+            key-positions = <32 44>; // K, COMMA
+            bindings = <&kp LS(ENTER)>;
+        };
+        combo_tab {
+            timeout-ms = <25>;
+            key-positions = <31 43>; // J, M
+            bindings = <&kp TAB>;
+        };
+        combo_caps_word {
+            timeout-ms = <25>;
+            key-positions = <30 42>; // H, N
+            bindings = <&caps_word>;
+        };
+        combo_esc_1 {
+            timeout-ms = <25>;
+            key-positions = <28 40>; // F, V
+            bindings = <&kp ESC>;
+        };
+        combo_esc_2 {
+            timeout-ms = <25>;
+            key-positions = <26 33>; // S, L
+            bindings = <&kp ESC>;
+        };
+        combo_bspc {
+            timeout-ms = <25>;
+            key-positions = <16 28>; // R, F
+            bindings = <&kp BSPC>;
+        };
+        combo_del {
+            timeout-ms = <25>;
+            key-positions = <17 29>; // T, G
+            bindings = <&kp DEL>;
+        };
+
+        // Lock screen (MacOS)
+        combo_cmd_ctrl_q {
+            timeout-ms = <25>;
+            key-positions = <28 40 29 41>; // F, V, G, B
+            bindings = <&kp LG(LC(Q))>;
+        };
+
+        combo_alt_space {
+            timeout-ms = <25>;
+            key-positions = <31 32>; // J, K
+            bindings = <&kp LA(SPACE)>;
+        };
+
+        combo_ctrl_alt_space {
+            timeout-ms = <25>;
+            key-positions = <29 41>; // G, B
+            bindings = <&kp LA(LC(SPACE))>;
+        };
+
+        combo_ctrl_alt_shift_space {
+            timeout-ms = <25>;
+            key-positions = <33 45>; // L, .(DOT)
+            bindings = <&kp LA(LC(LS(SPACE)))>;
+        };
+
+        combo_private_seq_1 {
+            timeout-ms = <25>;
+            key-positions = <30 31 42 43>; // H, J, N, M
+            bindings = <&pri1>;
+        };
+        
+        // Oneshot mods
+        combo_shift {
+            timeout-ms = <25>;
+            key-positions = <26 28>; // S, F
+            bindings = <&sk LSHFT>;
+        };
+        combo_alt {
+            timeout-ms = <25>;
+            key-positions = <32 33>; // K, L
+            bindings = <&sk LALT>;
+        };
+        combo_gui_shift {
+            timeout-ms = <25>;
+            key-positions = <43 26>; // M, S
+            bindings = <&sk LG(LSHFT)>;
+        };
+        combo_gui_alt {
+            timeout-ms = <40>;
+            key-positions = <43 28>; // M, F
+            bindings = <&sk LG(LALT)>;
+        };
+        combo_gui_ctrl {
+            timeout-ms = <40>;
+            key-positions = <43 39>; // M, C
+            bindings = <&sk LG(LCTRL)>;
+        };
+        combo_gui_shift_alt {
+            timeout-ms = <30>;
+            key-positions = <43 27>; // M, D
+            bindings = <&sk LG(LS(LALT))>;
+        };
+        combo_gui_shift_ctrl {
+            timeout-ms = <40>;
+            key-positions = <43 38>; // M, X
+            bindings = <&sk LG(LS(LCTRL))>;
+        };
+        combo_gui_alt_ctrl {
+            timeout-ms = <40>;
+            key-positions = <43 40>; // M, V
+            bindings = <&sk LG(LA(LCTRL))>;
+        };
+        combo_hyper {
+            timeout-ms = <40>;
+            key-positions = <43 14>; // M, W
+            bindings = <&sk LG(LS(LA(LCTRL)))>;
+        };
+        combo_meh {
+            timeout-ms = <40>;
+            key-positions = <40 30>; // V, H
+            bindings = <&sk LS(LA(LCTRL))>;
+        };
+        combo_alt_ctrl {
+            timeout-ms = <40>;
+            key-positions = <40 31>; // V, J
+            bindings = <&sk LA(LCTRL)>;
+        };
+        combo_alt_shift {
+            timeout-ms = <40>;
+            key-positions = <40 32>; // V, K
+            bindings = <&sk LA(LSHFT)>;
+        };
+        combo_shift_ctrl {
+            timeout-ms = <40>;
+            key-positions = <40 33>; // V, L
+            bindings = <&sk LC(LSHFT)>;
         };
     };
 
