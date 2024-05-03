@@ -224,34 +224,34 @@
         // Tmux
         combo_ctrl_b {
             timeout-ms = <25>;
-            key-positions = <15 27>; // D, E
+            key-positions = <12 2>; // D, E
             bindings = <&kp LC(B)>;
         };
 
         // Track ball and mouse clicks
         combo_mo_scroll {
             timeout-ms = <25>;
-            key-positions = <14 26>; // S, W
+            key-positions = <11 1>; // S, W
             bindings = <&tdsc>; //<&mo 5>;
         };
         combo_mo_snipe {
             timeout-ms = <25>;
-            key-positions = <21 33>; // O, L
+            key-positions = <8 18>; // O, L
             bindings = <&tdsn>; //<&mo 6>;
         };
         combo_left_click {
             timeout-ms = <25>;
-            key-positions = <27 28>; // D, F
+            key-positions = <12 13>; // D, F
             bindings = <&mkp LCLK>;
         };
         combo_right_click {
             timeout-ms = <25>;
-            key-positions = <28 29>; // F, G
+            key-positions = <13 14>; // F, G
             bindings = <&mkp RCLK>;
         };
         combo_tog_3 {
             timeout-ms = <25>;
-            key-positions = <26 38>; // S, X
+            key-positions = <11 21>; // S, X
             bindings = <&tog 3>;
         };
 
@@ -259,140 +259,140 @@
         // Enter/ESC ...
         combo_enter {
             timeout-ms = <25>;
-            key-positions = <20 32>; // I, K
+            key-positions = <7 17>; // I, K
             bindings = <&kp ENTER>;
         };
         combo_shift_enter {
             timeout-ms = <25>;
-            key-positions = <32 44>; // K, COMMA
+            key-positions = <17 27>; // K, COMMA
             bindings = <&kp LS(ENTER)>;
         };
         combo_tab {
             timeout-ms = <25>;
-            key-positions = <31 43>; // J, M
+            key-positions = <16 26>; // J, M
             bindings = <&kp TAB>;
         };
         combo_caps_word {
             timeout-ms = <25>;
-            key-positions = <30 42>; // H, N
+            key-positions = <15 25>; // H, N
             bindings = <&caps_word>;
         };
         combo_esc_1 {
             timeout-ms = <25>;
-            key-positions = <28 40>; // F, V
+            key-positions = <13 23>; // F, V
             bindings = <&kp ESC>;
         };
         combo_esc_2 {
             timeout-ms = <25>;
-            key-positions = <26 33>; // S, L
+            key-positions = <11 18>; // S, L
             bindings = <&kp ESC>;
         };
         combo_bspc {
             timeout-ms = <25>;
-            key-positions = <16 28>; // R, F
+            key-positions = <3 13>; // R, F
             bindings = <&kp BSPC>;
         };
         combo_del {
             timeout-ms = <25>;
-            key-positions = <17 29>; // T, G
+            key-positions = <4 14>; // T, G
             bindings = <&kp DEL>;
         };
 
         // Lock screen (MacOS)
         combo_cmd_ctrl_q {
             timeout-ms = <25>;
-            key-positions = <28 40 29 41>; // F, V, G, B
+            key-positions = <13 23 14 24>; // F, V, G, B
             bindings = <&kp LG(LC(Q))>;
         };
 
         combo_alt_space {
             timeout-ms = <25>;
-            key-positions = <31 32>; // J, K
+            key-positions = <16 17>; // J, K
             bindings = <&kp LA(SPACE)>;
         };
 
         combo_ctrl_alt_space {
             timeout-ms = <25>;
-            key-positions = <29 41>; // G, B
+            key-positions = <14 24>; // G, B
             bindings = <&kp LA(LC(SPACE))>;
         };
 
         combo_ctrl_alt_shift_space {
             timeout-ms = <25>;
-            key-positions = <33 45>; // L, .(DOT)
+            key-positions = <18 28>; // L, .(DOT)
             bindings = <&kp LA(LC(LS(SPACE)))>;
         };
 
         combo_private_seq_1 {
             timeout-ms = <25>;
-            key-positions = <30 31 42 43>; // H, J, N, M
+            key-positions = <15 16 25 26>; // H, J, N, M
             bindings = <&pri1>;
         };
         
         // Oneshot mods
         combo_shift {
             timeout-ms = <25>;
-            key-positions = <26 28>; // S, F
+            key-positions = <11 13>; // S, F
             bindings = <&sk LSHFT>;
         };
         combo_alt {
             timeout-ms = <25>;
-            key-positions = <32 33>; // K, L
+            key-positions = <17 18>; // K, L
             bindings = <&sk LALT>;
         };
         combo_gui_shift {
             timeout-ms = <25>;
-            key-positions = <43 26>; // M, S
+            key-positions = <26 11>; // M, S
             bindings = <&sk LG(LSHFT)>;
         };
         combo_gui_alt {
             timeout-ms = <40>;
-            key-positions = <43 28>; // M, F
+            key-positions = <26 13>; // M, F
             bindings = <&sk LG(LALT)>;
         };
         combo_gui_ctrl {
             timeout-ms = <40>;
-            key-positions = <43 39>; // M, C
+            key-positions = <26 22>; // M, C
             bindings = <&sk LG(LCTRL)>;
         };
         combo_gui_shift_alt {
             timeout-ms = <30>;
-            key-positions = <43 27>; // M, D
+            key-positions = <26 12>; // M, D
             bindings = <&sk LG(LS(LALT))>;
         };
         combo_gui_shift_ctrl {
             timeout-ms = <40>;
-            key-positions = <43 38>; // M, X
+            key-positions = <26 21>; // M, X
             bindings = <&sk LG(LS(LCTRL))>;
         };
         combo_gui_alt_ctrl {
             timeout-ms = <40>;
-            key-positions = <43 40>; // M, V
+            key-positions = <26 23>; // M, V
             bindings = <&sk LG(LA(LCTRL))>;
         };
         combo_hyper {
             timeout-ms = <40>;
-            key-positions = <43 14>; // M, W
+            key-positions = <26 1>; // M, W
             bindings = <&sk LG(LS(LA(LCTRL)))>;
         };
         combo_meh {
             timeout-ms = <40>;
-            key-positions = <40 30>; // V, H
+            key-positions = <23 15>; // V, H
             bindings = <&sk LS(LA(LCTRL))>;
         };
         combo_alt_ctrl {
             timeout-ms = <40>;
-            key-positions = <40 31>; // V, J
+            key-positions = <23 16>; // V, J
             bindings = <&sk LA(LCTRL)>;
         };
         combo_alt_shift {
             timeout-ms = <40>;
-            key-positions = <40 32>; // V, K
+            key-positions = <23 17>; // V, K
             bindings = <&sk LA(LSHFT)>;
         };
         combo_shift_ctrl {
             timeout-ms = <40>;
-            key-positions = <40 33>; // V, L
+            key-positions = <23 18>; // V, L
             bindings = <&sk LC(LSHFT)>;
         };
     };
@@ -402,7 +402,7 @@
 
         BASE {
             bindings = <
-AS(Q)    AS(W)   AS(E)     AS(R)         AS(T)            AS(Y)        AS(U)          AS(I)      AS(O)    AS(P)
+AS(Q)    AS(W)   AS(E)     AS(R)  D       AS(T)            AS(Y)        AS(U)          AS(I)      AS(O)    AS(P)
 AS(A)    AS(S)   AS(D)     AS(F)         AS(G)            AS(H)        AS(J)          AS(K)      AS(L)    AS(SEMI)
 AS(Z)    AS(X)   AS(C)     AS(V)         AS(B)            AS(N)        AS(M)          AS(COMMA)  AS(DOT)  AS(GRAVE)
                             &sk LCTRL  &sl 1     &sk LGUI      &kp SPACE  &sl 2
