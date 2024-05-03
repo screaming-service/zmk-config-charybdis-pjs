@@ -10,7 +10,7 @@
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 
 / {
-    chosen { zmk,matrix_transform = &default_transform; };
+    chosen { zmk,matrix_transform = &five_column_transform; };
 };
 
 / {
@@ -402,63 +402,63 @@
 
         BASE {
             bindings = <
-&kp ESC    AS(Q)    AS(W)   AS(E)     AS(R)         AS(T)            AS(Y)        AS(U)          AS(I)      AS(O)    AS(P)     &kp BSPC
-&kp TAB    AS(A)    AS(S)   AS(D)     AS(F)         AS(G)            AS(H)        AS(J)          AS(K)      AS(L)    AS(SEMI)  &kp APOS
-&kp LSHFT  AS(Z)    AS(X)   AS(C)     AS(V)         AS(B)            AS(N)        AS(M)          AS(COMMA)  AS(DOT)  AS(GRAVE) &kp LGUI
+AS(Q)    AS(W)   AS(E)     AS(R)         AS(T)            AS(Y)        AS(U)          AS(I)      AS(O)    AS(P)
+AS(A)    AS(S)   AS(D)     AS(F)         AS(G)            AS(H)        AS(J)          AS(K)      AS(L)    AS(SEMI)
+AS(Z)    AS(X)   AS(C)     AS(V)         AS(B)            AS(N)        AS(M)          AS(COMMA)  AS(DOT)  AS(GRAVE)
                             &sk LCTRL  &sl 1     &sk LGUI      &kp SPACE  &sl 2
             >;
         };
 
         NAV {
             bindings = <
-&kp TAB           &trans     &kp STAR    &kp DQT       &kp LPAR      &kp RPAR      AS(BSLH)   AS(N7)     AS(N8)     AS(N9)     AS(N0)       &kp DEL
-&kp LEFT_CONTROL  &trans     &kp AMPS    &kp UNDER     &kp LBKT      &kp RBKT      AS(SQT)    AS(N4)     AS(N5)     AS(N6)     AS(MINUS)    &kp SQT
-&kp LSHFT         &trans     &kp PIPE    &kp PLUS      &kp LBRC      &kp RBRC      AS(FSLH)   AS(N1)     AS(N2)     AS(N3)     AS(EQUAL)    &kp ESC
+&trans     &kp STAR    &kp DQT       &kp LPAR      &kp RPAR      AS(BSLH)   AS(N7)     AS(N8)     AS(N9)     AS(N0)
+&trans     &kp AMPS    &kp UNDER     &kp LBKT      &kp RBKT      AS(SQT)    AS(N4)     AS(N5)     AS(N6)     AS(MINUS)
+&trans     &kp PIPE    &kp PLUS      &kp LBRC      &kp RBRC      AS(FSLH)   AS(N1)     AS(N2)     AS(N3)     AS(EQUAL)
                             &trans        &tog 1        &trans        &trans     &mo 3
             >;
         };
 
         SYMNUM {
             bindings = <
-&kp TAB           &kp F7  &kp F8   &kp F9        &ht_r 0 0      &none        &kp F10   &kp F11      &kp F12   &none      &none    &kp DELETE
-&kp LEFT_CONTROL  &kp F4  &kp F5   &kp F6        &ht_f 0 0      &ht_g 0 0    &kp LEFT  &kp DOWN     &kp UP    &kp RIGHT  &trans   &trans
-&kp LEFT_SHIFT    &kp F1  &kp F2   &kp F3        &ht_v 0 0      &none        &kp HOME  &kp PG_DN    &kp PG_UP &kp END    &none    &kp ESC
+&kp F7  &kp F8   &kp F9        &ht_r 0 0      &none        &kp F10   &kp F11      &kp F12   &none      &none
+&kp F4  &kp F5   &kp F6        &ht_f 0 0      &ht_g 0 0    &kp LEFT  &kp DOWN     &kp UP    &kp RIGHT  &trans
+&kp F1  &kp F2   &kp F3        &ht_v 0 0      &none        &kp HOME  &kp PG_DN    &kp PG_UP &kp END    &none
                                    &trans        &mo 3          &trans       &trans    &tog 2
             >;
         };
 
         FUN {
             bindings = <
-&none        &trans        &trans        &mo 5         &none      &none         &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE    &none         &tdp0         &none
-&none        &trans        &trans        &mo 4         &mkp LCLK  &mkp RCLK     &none        &none        &trans        &trans        &trans        &none
-&bootloader  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 3  &none      &bt BT_CLR    &none        &none        &none         &none         &trans        &bootloader
+&trans        &trans        &mo 5         &none         &none         &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE    &none         &tdp0
+&trans        &trans        &mo 4         &mkp LCLK     &mkp RCLK     &none        &none        &trans        &trans        &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR    &none        &none        &none         &none         &trans
                          &trans        &tog 3     &trans        &trans       &tog 3
             >;
         };
 
         AUTO-MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans     &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &mo 6   &mo 5      &mkp LCLK  &mkp RCLK &trans  &trans  &kp ESC &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans     &trans  &trans       &trans  &trans  &trans  &trans  &trans
+&trans  &mo 6   &mo 5      &mkp LCLK  &mkp RCLK &trans  &trans  &kp ESC &trans  &trans
+&trans  &trans  &trans     &trans  &trans       &trans  &trans  &trans  &trans  &trans
                         &trans     &kp LSHFT  &trans       &trans  &trans
             >;
         };
 
         SCROLL {
             bindings = <
-&trans  &trans  &trans  &trans   &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans   &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans   &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans   &trans  &trans       &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans   &trans  &trans       &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans   &trans  &trans       &trans  &trans  &trans  &trans  &trans
                         &trans   &trans  &trans       &trans  &trans
             >;
         };
 
         SNIPE {
             bindings = <
-&trans  &trans  &trans  &trans   &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans   &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans   &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans   &trans  &trans       &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans   &trans  &trans       &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans   &trans  &trans       &trans  &trans  &trans  &trans  &trans
                         &trans   &trans  &trans       &trans  &trans
             >;
         };
