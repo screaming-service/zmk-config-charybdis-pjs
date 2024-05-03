@@ -13,6 +13,7 @@
     chosen { zmk,matrix_transform = &default_transform; };
 };
 
+/ {
     macros {
         vi_w: vi_w {
             label = "VIM_SAVE";
