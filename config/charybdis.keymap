@@ -439,7 +439,7 @@
         AUTO-MOUSE {
             bindings = <
 &trans  &trans  &trans  &trans     &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &mo 6   &mo 5      &mkp LCLK  &mkp RCLK &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &mo 6   &mo 5      &mkp LCLK  &mkp RCLK &trans  &trans  &kp ESC &trans  &trans  &trans
 &trans  &trans  &trans  &trans     &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
                         &trans     &kp LSHFT  &trans       &trans  &trans
             >;
