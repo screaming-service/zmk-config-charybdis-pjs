@@ -5,8 +5,6 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define U_TAPPING_TERM 200
-
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 
 / {
