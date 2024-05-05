@@ -252,7 +252,7 @@
             label = "HOLD_TRI_TAP_DOUBLE";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-fms = <200>;
+            tapping-term-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&c3cp>, <&c2cp>;
         };
