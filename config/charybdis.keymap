@@ -147,7 +147,7 @@
             bindings
                 = <&macro_tap &mkp LCLK &mkp LCLK>
                 , <&macro_wait_time 300>
-                , <&kp LG(C)>
+                , <&macro_tap &kp LG(C)>
                 ;
         };
         c3cp: c3cp {
