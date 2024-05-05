@@ -7,6 +7,14 @@
 
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 
+# Longer time out for oneshot keys
+&sl {
+    release-after-ms = <2000>;
+};
+&sk {
+    release-after-ms = <2000>;
+};
+
 / {
     chosen { zmk,matrix_transform = &five_column_transform; };
 };
