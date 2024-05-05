@@ -143,22 +143,21 @@
             label = "DOUBLE_CLICK_CMD_C";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <20>;
-            tap-ms = <20>;
+            wait-ms = <40>;
             bindings
                 = <&macro_tap 
                     &mkp LCLK &mkp LCLK &kp LG(C)>
                 ;
         };
         c3cp: c3cp {
-            label = "DOUBLE_CLICK_CMD_C";
+            label = "TRIPLE_CLICK_CMD_C";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <20>;
-            tap-ms = <20>;
+            wait-ms = <40>;
             bindings
-                = <&macro_tap 
-                    &mkp LCLK &mkp LCLK &mkp LCLK &kp LG(C)>
+                = <&macro_tap &mkp LCLK &mkp LCLK &mkp LCLK>
+                , <&macro_wait_time 60>
+                , <&macro_tap &kp LG(C)>
                 ;
         };
     };
