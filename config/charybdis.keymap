@@ -130,6 +130,29 @@
                     &kp Z>
                 ;
         };
+        // Click and copy
+        c2cp: c2cp {
+            label = "DOUBLE_CLICK_CMD_C";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <20>;
+            tap-ms = <20>;
+            bindings
+                = <&macro_tap 
+                    &mkp LCLK &mkp LCLK &kp LG(C)>
+                ;
+        };
+        c3cp: c3cp {
+            label = "DOUBLE_CLICK_CMD_C";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <20>;
+            tap-ms = <20>;
+            bindings
+                = <&macro_tap 
+                    &mkp LCLK &mkp LCLK &mkp LCLK &kp LG(C)>
+                ;
+        };
     };
 
     behaviors {
@@ -208,12 +231,31 @@
             flavor = "tap-preferred";
             bindings = <&pri2>, <&pri0>;
         };
+
         tdp0: tap_dance_private_seq_02 {
             label = "TD_PRIVATE_SEQ_02";
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <175>;
             bindings = <&none>, <&ht_p 0 0>;
+        };
+        
+        ht_32: hold_tri_click_tap_double_click {
+            label = "HOLD_TRI_TAP_DOUBLE";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping_term_ms = <165>;
+            quick_tap_ms = <120>;
+            flavor = "tap-preferred";
+            bindings = <&c3cp>, <&c2cp>;
+        };
+
+        tdcc: click_and_copy {
+            label = "DOUBLE_TRIPLE_CLICK_AND_COPY";            
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <165>;
+            bindings = <&mkp LCLK>, <&ht_32>;
         };
     };
 
@@ -437,7 +479,7 @@ AS(Z)    AS(X)   AS(C)     AS(V)         AS(B)            AS(N)        AS(M)    
         AUTO-MOUSE {
             bindings = <
 &trans  &trans  &trans     &trans  &trans       &trans  &trans  &trans  &trans  &trans
-&trans  &mo 6   &mo 5      &mkp LCLK  &mkp RCLK &trans  &trans  &kp ESC &trans  &trans
+&trans  &mo 6   &mo 5      &tdcc   &mkp RCLK    &trans  &trans  &kp ESC &trans  &trans
 &trans  &trans  &trans     &trans  &trans       &trans  &trans  &trans  &trans  &trans
                         &trans     &kp LSHFT  &trans       &trans  &trans
             >;
