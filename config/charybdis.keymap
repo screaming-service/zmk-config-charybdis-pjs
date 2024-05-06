@@ -172,7 +172,7 @@
                 ;
         };
 
-        SPC_WRAPF(spc_eq, &kp EQUAL);
+        SPC_WRAP(spc_eq, &kp EQUAL);
     };
 
     behaviors {
