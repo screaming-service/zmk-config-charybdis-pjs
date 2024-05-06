@@ -184,6 +184,9 @@
         SPC_WRAP(spc_eq, &kp EQUAL);
         SPC_WRAP(spc_mi, &kp MINUS);
         SPC_WRAP(spc_pl, &kp PLUS);
+        SPC_WRAP(spc_st, &kp STAR);
+        SPC_WRAP(spc_am, &kp AMPS &kp AMPS);
+        SPC_WRAP(spc_pi, &kp PIPE &kp PIPE);
 
         tri_dqt: tri_dqt {
             label = "TRIPLE_DOUBLE_QUOTE";
@@ -300,6 +303,9 @@
         TD_SPC_WRAP_2(td_under, UNDER, spc_mi);
         TD_SPC_WRAP_2(td_plus, PLUS, spc_pl);
         TD_SPC_WRAP_2(td_dqt, DQT, tri_dqt);
+        TD_SPC_WRAP_2(td_star, STAR, spc_st);
+        TD_SPC_WRAP_2(td_amps, AMPS, spc_am);
+        TD_SPC_WRAP_2(td_pipe, PIPE, spc_pi);
 
     };
 
