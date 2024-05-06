@@ -298,13 +298,7 @@
         };
 
         TD_SPC_WRAP_2(td_spc_eq, SPACE, spc_eq);
-        td_under: tap_dance_under_minus {
-            label = "TAP_DANCE_UNDER_MINUS";            
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp UNDER>, <&spc_mi>;
-        };
+        TD_SPC_WRAP_2(td_under, UNDER, spc_mi);
         TD_SPC_WRAP_2(td_plus, PLUS, spc_pl);
         TD_SPC_WRAP_2(td_dqt, DQT, tri_dqt);
         TD_SPC_WRAP_2(td_star, STAR, spc_st);
