@@ -457,7 +457,7 @@
         };
         combo_bootloader {
             timeout-ms = <40>;
-            key-positions = <20, 29>; // Z, `
+            key-positions = <20 29>; // Z, `
             bindings = <&bootloader>;
         };
     };
