@@ -18,12 +18,12 @@
         }
 
 #define TD_SPC_WRAP_2(td_name, prime_key, macro_name) \
-        td_name: td_name {
-            label = "td_name";            
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp prime_key>, <&macro_name>;
+        td_name: td_name { \
+            label = "td_name"; \           
+            compatible = "zmk,behavior-tap-dance"; \
+            #binding-cells = <0>; \
+            tapping-term-ms = <200>; \
+            bindings = <&kp prime_key>, <&macro_name>; \
         }
 
 // Longer time out for oneshot keys
@@ -182,6 +182,7 @@
         };
 
         SPC_WRAP(spc_eq, &kp EQUAL);
+        SPC_WRAP(spc_mi, &kp MINUS);
     };
 
     behaviors {
@@ -287,6 +288,7 @@
         };
 
         TD_SPC_WRAP_2(td_spc_eq, SPACE, spc_eq);
+        TD_SPC_WRAP_2(td_spc_mi, UNDER, spc_mi);
 
     };
 
