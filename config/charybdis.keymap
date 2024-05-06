@@ -183,6 +183,7 @@
 
         SPC_WRAP(spc_eq, &kp EQUAL);
         SPC_WRAP(spc_mi, &kp MINUS);
+        SPC_WRAP(spc_pl, &kp PLUS);
     };
 
     behaviors {
@@ -289,6 +290,7 @@
 
         TD_SPC_WRAP_2(td_spc_eq, SPACE, spc_eq);
         TD_SPC_WRAP_2(td_under, UNDER, spc_mi);
+        TD_SPC_WRAP_2(td_plus, PLUS, spc_pl);
 
     };
 
@@ -491,7 +493,7 @@ AS(Z)    AS(X)   AS(C)     AS(V)         AS(B)            AS(N)        AS(M)    
             bindings = <
 &trans     &kp STAR    &kp DQT       &kp LPAR      &kp RPAR      AS(BSLH)   AS(N7)     AS(N8)     AS(N9)     AS(N0)
 &trans     &kp AMPS    &td_under     &kp LBKT      &kp RBKT      AS(SQT)    AS(N4)     AS(N5)     AS(N6)     AS(MINUS)
-&trans     &kp PIPE    &kp PLUS      &kp LBRC      &kp RBRC      AS(FSLH)   AS(N1)     AS(N2)     AS(N3)     AS(EQUAL)
+&trans     &kp PIPE    &td_plus      &kp LBRC      &kp RBRC      AS(FSLH)   AS(N1)     AS(N2)     AS(N3)     AS(EQUAL)
                             &trans        &tog 1        &trans        &trans     &mo 3
             >;
         };
