@@ -15,7 +15,7 @@
             wait-ms = <25>; \
             tap-ms = <25>; \
             bindings = <&macro_tap &kp SPACE content &kp SPACE>; \
-        };
+        }
 
 // Longer time out for oneshot keys
 &sl {
@@ -275,6 +275,14 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&mkp LCLK>, <&ht_32 0 0>;
+        };
+
+        td_space: tap_dance_space_and_equal {
+            label = "SPACE_EQUAL";            
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp SPACE>, <&spc_eq 0 0>;
         };
     };
 
