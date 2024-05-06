@@ -477,7 +477,7 @@ AS(Z)    AS(X)   AS(C)     AS(V)         AS(B)            AS(N)        AS(M)    
         FUN {
             bindings = <
 &trans        &trans        &none         &none         &none         &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE    &none         &tdp0
-&trans        &mo 6 Eb        &mo 5         &tdcc         &mkp RCLK     &none        &none        &trans        &trans        &trans
+&trans        &mo 6         &mo 5         &tdcc         &mkp RCLK     &none        &none        &trans        &trans        &trans
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR    &none        &none        &none         &none         &trans
                          &trans        &tog 3     &trans        &trans       &tog 3
             >;
