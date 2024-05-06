@@ -184,6 +184,14 @@
         SPC_WRAP(spc_eq, &kp EQUAL);
         SPC_WRAP(spc_mi, &kp MINUS);
         SPC_WRAP(spc_pl, &kp PLUS);
+
+        tri_dqt: tri_dqt {
+            label = "TRIPLE_DOUBLE_QUOTE";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            bindings = <&macro_tap &kp DQT &kp DQT &kp DQT>;
+        };
     };
 
     behaviors {
@@ -291,6 +299,7 @@
         TD_SPC_WRAP_2(td_spc_eq, SPACE, spc_eq);
         TD_SPC_WRAP_2(td_under, UNDER, spc_mi);
         TD_SPC_WRAP_2(td_plus, PLUS, spc_pl);
+        TD_SPC_WRAP_2(td_dqt, DQT, tri_dqt);
 
     };
 
