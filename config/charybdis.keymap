@@ -485,9 +485,9 @@ AS(Z)    AS(X)   AS(C)     AS(V)         AS(B)            AS(N)        AS(M)    
 
         AUTO-MOUSE {
             bindings = <
-&trans      &trans  &trans     &trans  &c2cp        &trans  &trans  &trans  &trans  &trans
+&trans      &trans  &trans     &c2cp   &trans       &trans  &trans  &trans  &trans  &trans
 &trans      &mo 6   &mo 5      &tdcc   &mkp RCLK    &trans  &trans  &kp ESC &trans  &trans
-&bootloader &trans  &trans     &trans  &c3cp        &trans  &trans  &trans  &trans  &bootloader
+&bootloader &trans  &trans     &c3cp   &trans       &trans  &trans  &trans  &trans  &bootloader
                         &trans     &kp LSHFT  &trans       &trans  &trans
             >;
         };
