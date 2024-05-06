@@ -7,6 +7,16 @@
 
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 
+#define SPC_WRAP(macro_name, content) \
+        macro_name: macro_name { \
+            label = "macro_name"; \
+            compatible = "zmk,behavior-macro"; \
+            #binding-cells = <0>; \
+            wait-ms = <25>; \
+            tap-ms = <25>; \
+            bindings = <&macro_tap &kp SPACE content &kp SPACE>; \
+        };
+
 // Longer time out for oneshot keys
 &sl {
     release-after-ms = <2000>;
@@ -161,6 +171,8 @@
                 , <&macro_tap &kp LG(C)>
                 ;
         };
+
+        SPACE_WRAP(spc_eq, &kp EQUAL);
     };
 
     behaviors {
