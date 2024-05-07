@@ -293,7 +293,7 @@
             label = "DOUBLE_TRIPLE_CLICK_AND_COPY";            
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <175>;
             bindings = <&mkp LCLK>, <&ht_32 0 0>;
         };
 
