@@ -297,13 +297,6 @@
         TD_SPC_WRAP_2(td_amps, AMPS, spc_am);
         TD_SPC_WRAP_2(td_pipe, PIPE, spc_pi);
 
-        ht_bl: hold_boot_loader {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping_term_ms = <155>;
-            flavor = "tap-preferred";
-            bindings = <&bootloader>, <&none>;
-        };
     };
 
     combos {
@@ -565,7 +558,7 @@ AS(Z)    AS(X)   AS(C)     AS(V)         AS(B)            AS(N)        AS(M)    
         FUN {
             bindings = <
 &trans        &trans        &none         &none         &none         &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE    &none         &tdp0
-&trans        &mo 6         &mo 5         &mkp LCLK     &mkp RCLK     &none        &none        &trans        &trans        &trans
+&bootloader   &mo 6         &mo 5         &mkp LCLK     &mkp RCLK     &none        &none        &trans        &trans        &bootloader
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR    &none        &none        &none         &none         &trans
                          &trans        &tog 3     &trans        &trans       &tog 3
             >;
@@ -573,9 +566,9 @@ AS(Z)    AS(X)   AS(C)     AS(V)         AS(B)            AS(N)        AS(M)    
 
         AUTO-MOUSE {
             bindings = <
-&trans      &trans  &trans     &c2cp       &trans       &trans  &trans  &trans  &trans  &trans
-&trans      &mo 6   &mo 5      &mkp LCLK   &mkp RCLK    &trans  &trans  &kp ESC &trans  &trans
-&ht_bl 0 0  &trans  &trans     &c3cp       &trans       &trans  &trans  &trans  &trans  &ht_bl 0 0
+&trans  &trans  &trans     &c2cp       &trans       &trans  &trans  &trans  &trans  &trans
+&trans  &mo 6   &mo 5      &mkp LCLK   &mkp RCLK    &trans  &trans  &kp ESC &trans  &trans
+&trans  &trans  &trans     &c3cp       &trans       &trans  &trans  &trans  &trans  &trans
                         &trans     &kp LSHFT  &trans       &trans  &trans
             >;
         };
