@@ -427,6 +427,7 @@
             key-positions = <17 18>; // K, L
             bindings = <&sk LALT>;
         };
+        // M, A is used for alt-shift-down
         combo_gui_shift {
             timeout-ms = <25>;
             key-positions = <26 11>; // M, S
@@ -481,6 +482,53 @@
             timeout-ms = <40>;
             key-positions = <23 18>; // V, L
             bindings = <&sk LC(LSHFT)>;
+        };
+        // Alt / Shift with arrows
+        combo_alt_left_arrow {
+            timeout-ms = <40>;
+            key-positions = <10 15>; // A, H
+            bindings = <&kp LA(LEFT)>;
+        };
+        combo_alt_down_arrow {
+            timeout-ms = <40>;
+            key-positions = <10 16>; // A, J
+            bindings = <&kp LA(DOWN)>;
+        };
+        combo_alt_up_arrow {
+            timeout-ms = <40>;
+            key-positions = <10 17>; // A, K
+            bindings = <&kp LA(UP)>;
+        };
+        combo_alt_right_arrow {
+            timeout-ms = <40>;
+            key-positions = <10 18>; // A, L
+            bindings = <&kp LA(RIGHT)>;
+        };
+        combo_alt_shift_left_arrow {
+            timeout-ms = <40>;
+            key-positions = <10 25>; // A, N
+            bindings = <&kp LA(LS((LEFT))>;
+        };
+        combo_alt_shift_down_arrow {
+            timeout-ms = <40>;
+            key-positions = <10 26>; // A, M
+            bindings = <&kp LA(LS(DOWN))>;
+        };
+        combo_alt_shift_up_arrow {
+            timeout-ms = <40>;
+            key-positions = <10 27>; // A, ,
+            bindings = <&kp LA(LS((UP))>;
+        };
+        combo_alt_shift_right_arrow {
+            timeout-ms = <40>;
+            key-positions = <10 28>; // A, .
+            bindings = <&kp LA(LS(RIGHT))>;
+        };
+
+        combo_alt_backspace {
+            timeout-ms = <40>;
+            key-positions = <10 19>; // A, ;
+            bindings = <&kp LA(BSPC)>;
         };
     };
 
