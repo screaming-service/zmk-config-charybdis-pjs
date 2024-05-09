@@ -476,6 +476,7 @@
             key-positions = <23 18>; // V, L
             bindings = <&sk LC(LSHFT)>;
         };
+        /*
         // Alt / Shift with arrows
         combo_alt_left_arrow {
             timeout-ms = <40>;
@@ -523,6 +524,7 @@
             key-positions = <10 19>; // A, ;
             bindings = <&kp LA(BSPC)>;
         };
+        */
     };
 
     keymap {
