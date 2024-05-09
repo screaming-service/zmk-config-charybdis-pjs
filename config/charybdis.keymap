@@ -301,13 +301,13 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <175>;
-            bindings = <&ht LALT Z>, <&as Z LS(Z)>;
+            bindings = <&mt LALT Z>, <&as Z LS(Z)>;
         };
         td_a: tap_dance_a_shift {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <175>;
-            bindings = <&ht LSHFT A>, <&as A LS(A)>;
+            bindings = <&mt LSHFT A>, <&as A LS(A)>;
         };
     };
 
